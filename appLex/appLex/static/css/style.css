@@ -1,0 +1,169 @@
+input:focus, .btn:focus,
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+}
+
+a {
+    color: #0078A7;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.bkgrCont {
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .7;
+}
+
+.bkgrContLogin {
+    background-image: url('./../img/pexels-sora-shimazaki-5668772.jpg');
+}
+
+.bkgrContRegisto{
+    background-image: url('./../img/pexels-pavel-danilyuk-8112172.jpg');
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.br-0 {
+    border-radius: 0;
+}
+
+.fondoAzul {
+    background-color: #0078A7;
+}
+
+.userIcon i {
+    color: white;
+    font-size: 12rem;
+}
+
+.userNav {
+    font-size: 1.5rem;
+    font-weight: 600
+}
+.fondoGris {
+    background-color: #EFEFEF;
+    text-decoration: none;
+}
+.estiloNav{
+    background-color:#0078A7 ;
+    color: white;
+}
+.mt-50{
+    margin-top: 100px;
+}
+.letraBlanca{
+    color: white;
+}
+.letraAzul{
+    color: #0078A7;
+}
+.cuadroInformacion{
+    margin: 3rem;
+    background-color: #EFEFEF;
+    padding: 25px;
+}
+
+.vistaCliente .userNav a.nav-link.active::before {
+    height: 10px;
+    width: 10px;
+    background-color: #FFF;
+    display: inline-block;
+    border-radius: 100%;
+    content: "";
+    margin-left: -15px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+}
+
+.companyTitle::before {
+    height: 3px;
+    width: 50px;
+    background-color: #FFF;
+    content: "";
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.companyTitle::after {
+    height: 3px;
+    width: 50px;
+    background-color: #FFF;
+    content: "";
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+nav.vistaAbogado {
+    height: 60px;
+}
+
+.h-100Abo {
+    height: calc(100vh - 60px);
+}
+
+.stillWorking {
+    height: 35rem;
+}
+
+.circleUser {
+    border: 3px solid #FFF;
+    border-radius: 100%;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: super;;
+}
+
+.userLogout i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.btn-blue {
+    background-color: #0078A7;
+    color: #FFF;
+}
+
+.btn-blue:hover {
+    background-color: #04658c;
+    color: #FFF;
+}
+
+#listaContratos a:hover,
+#listaSolicitudes a:hover {
+    color: #0078A7;
+    cursor: pointer;
+}
+
+.h-100Abo .userNav a.nav-link {
+    color: #04658c;
+}
+
+.h-100Abo .userNav a.nav-link.active::before {
+    height: 10px;
+    width: 10px;
+    background-color: #0078A7;
+    display: inline-block;
+    border-radius: 100%;
+    content: "";
+    margin-left: -15px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+}
+
+.cuadroInformacionCompany{
+    margin: 3rem;
+    padding: 25px;
+}
+
+#ingresoSolicitudTec .cuadroInformacionCompany {
+    background-color: #EFEFEF;
+}

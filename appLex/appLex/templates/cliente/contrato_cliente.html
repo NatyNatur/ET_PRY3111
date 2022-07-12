@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  {% include "common.html" %}
+</head>
+
+<body>
+  <div class="container-fluid h-100vh vistaCliente">
+    <div class="row h-100">
+      <div class="col-3 fondoAzul d-flex flex-column">
+        <div class="userIcon text-center mb-5">
+          <i class="bi bi-person-circle"></i>
+        </div>
+        <nav class="nav userNav flex-column ms-3 mb-auto">
+          <a class="nav-link text-white" aria-current="page" href="vista_cliente.html">Mi perfil</a>
+          <a class="nav-link text-white" href="solicitud_cliente.html">Mis solicitudes</a>
+          <a class="nav-link text-white active" href="contrato_cliente.html">Mis contratos</a>
+          <a class="nav-link text-white" href="index.html">Cerrar sesión</a>
+        </nav>
+        <div class="text-center text-white mb-3">
+          <h5 class="companyTitle">LEX</h5>
+        </div>
+      </div>
+      <div class="col-9" id="listaContratos">
+        <div class="cuadroInformacion row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">N° Contrato</th>
+                <th scope="col">Abogado a Cargo</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Ver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">12345</th>
+                <td>Harvey Specter</td>
+                <td>03/05/2022</td>
+                <td>Borrador</td>
+                <td><a onclick="javascript:void(toggleContratos())"><i class="bi bi-eye-fill"></i></a></td>
+              </tr>
+              <tr>
+                <th scope="row">12354</th>
+                <td>Matt Murdock</td>
+                <td>03/05/2022</td>
+                <td>En trámite</td>
+                <td><i class="bi bi-eye-fill"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">12334</th>
+                <td>Franklin Nelson</td>
+                <td>04/05/2022</td>
+                <td>Aprobado</td>
+                <td><i class="bi bi-eye-fill"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-9" id="vistaContrato" style="display: none;">
+        <div class="cuadroInformacion row">
+          <div class="col-3">
+            <b>
+              <p>N° Presupuesto: </p>
+            </b>
+          </div>
+          <div class="col-9">
+            <p>XN123</p>
+          </div>
+          <div class="col-3">
+            <b>
+              <p>Monto: </p>
+            </b>
+          </div>
+          <div class="col-9">
+            <p>$1.250.000</p>
+          </div>
+          <div class="col-3">
+            <b>
+              <p>Fecha:</p>
+            </b>
+          </div>
+          <div class="col-9">
+            <p>03/05/2022</p>
+          </div>
+          <div class="col-3">
+            <b>
+              <p>N° Cliente:</p>
+            </b>
+          </div>
+          <div class="col-9">
+            <p>256</p>
+          </div>
+          <div class="col-3">
+            <b>
+              <p>Estado:</p>
+            </b>
+          </div>
+          <div class="col-9">
+            <p>Enviado</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4 ms-5">
+            <button class="btn btn-secondary w-100" onclick="javascript:void(toggleContratos())">Volver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
