@@ -38,7 +38,9 @@ def ingresar_app(request):
     password_recibido = request.POST.get('inpPassword')
     cliente = Cliente.objects.filter(email = email_recibido).filter(password = password_recibido)
     if cliente:
-        return render(request, "cliente/vista_cliente.html", {'usuario': cliente})
+        request.session['cliente'] = list(cliente.values())
+        request.session.save()
+        return redirect('inicio/')
         #return redirect('inicio/', usuario)
     else: 
         mensaje = "Usuario o contraseña incorrecta"
@@ -46,7 +48,8 @@ def ingresar_app(request):
 
 # cliente
 def home_cliente(request):
-    return render(request, "cliente/vista_cliente.html")
+    cliente = request.session['cliente']
+    return render(request, "cliente/vista_cliente.html", {'usuario': cliente})
 
 def c_solicitudes(request):
     return render(request,"cliente/solicitud.html")

@@ -8,12 +8,12 @@ function ingresar() {
         return;
     }
 
-    if (usuario === 'cesar@mail.com' && contrasenia === '1234') {
-        location.href = '/inicio_abogado/';
+    else if (usuario === 'ba.ortiz@gmail.com' && contrasenia === '1234') {
+        location.href = '/inicio_tec/';
     }
 
-    if (usuario === 'ba.ortiz@gmail.com' && contrasenia === '1234') {
-        location.href = '/inicio_tec/';
+    else if (usuario === 'cesar@mail.com' && contrasenia === '1234') {
+        location.href = '/inicio_abogado/';
     }
 
     else {
