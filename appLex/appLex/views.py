@@ -31,3 +31,10 @@ def registrar_cliente(request):
 
 def home_cliente(request):
     return render(request, "cliente/vista_cliente.html")
+
+
+def modificar_cliente(request):
+    return render (request, "cliente/modificar_cliente.html")
+
+def modificacion_cliente(request):
+    return render (request, "cliente/modificar_cliente.html")
