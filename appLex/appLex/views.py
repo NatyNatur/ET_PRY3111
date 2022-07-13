@@ -58,10 +58,36 @@ def c_contratos(request):
     return render(request,"cliente/contratos.html")
 
 def modificar_cliente(request):
-    return render (request, "cliente/modificar_cliente.html")
+    cliente = request.session['cliente']
+    return render (request, "cliente/modificar_cliente.html", {'usuario': cliente})
 
 def modificacion_cliente(request):
-    return render (request, "cliente/modificar_cliente.html")
+    if request.POST.get("inpRut"):
+        rut_recibido = request.POST.get("inpRut")
+        nombre_recibido = request.POST.get("inpNombre")
+        appaterno_recibido = request.POST.get("inpApellidopa")
+        apmaterno_recibido = request.POST.get("inpApellidoma")
+        email_recibido = request.POST.get("inpEmail")
+        telefono_recibido = request.POST.get("inpTelefono")
+        direccion_recibido = request.POST.get("inpDireccion")
+        cliente = Cliente.objects.filter(rut = rut_recibido)
+        if cliente:
+            cli = Cliente.objects.get(rut = rut_recibido)
+            cli.nombre = nombre_recibido
+            cli.appaterno = appaterno_recibido
+            cli.apmaterno = apmaterno_recibido
+            cli.telefono = telefono_recibido
+            cli.direccion = direccion_recibido
+            cli.email = email_recibido
+            cli.save()
+            request.session['cliente'] = list(cliente.values())
+            request.session.save()
+            mensaje = "Datos correctamente modificados."           
+        else:
+            mensaje = "No existe usuario a modificar."           
+    else:
+        mensaje = "Ha ocurrido un error, no contamos con la información para modificar."
+    return redirect('/inicio/')
 
 # abogado
 def home_abogado(request):

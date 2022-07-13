@@ -31,44 +31,60 @@
       <div class="col-9">
         {% for user in usuario %}
         <div class="cuadroInformacion row">
-          <div class="col-3">
+          <div class="col-3 mb-2">
             <b>
-              <p>Nombre: </p>
+              <p>Nombre:</p>
             </b>
           </div>
-          <div class="col-9">
-            <p>{{user.nombre}} {{user.appaterno}} {{user.apmaterno}}</p>
+          <div class="col-9 mb-2">
+            <p>{{user.nombre}}</p>
           </div>
-          <div class="col-3">
+          <div class="col-3 mb-2">
+            <b>
+              <p>Apellido paterno: </p>
+            </b>
+          </div>
+          <div class="col-9 mb-2">
+            <p>{{user.appaterno}}</p>
+          </div>
+          <div class="col-3 mb-2">
+            <b>
+              <p>Apellido materno: </p>
+            </b>
+          </div>
+          <div class="col-9 mb-2">
+            <p>{{user.apmaterno}}</p>
+          </div>
+          <div class="col-3 mb-2">
             <b>
               <p>Rut: </p>
             </b>
           </div>
-          <div class="col-9">
+          <div class="col-9 mb-2">
             <p>{{user.rut}}</p>
           </div>
-          <div class="col-3">
+          <div class="col-3 mb-2">
             <b>
               <p>Email:</p>
             </b>
           </div>
-          <div class="col-9">
+          <div class="col-9 mb-2">
             <p>{{user.email}}</p>
           </div>
-          <div class="col-3">
+          <div class="col-3 mb-2">
             <b>
               <p>Teléfono:</p>
             </b>
           </div>
-          <div class="col-9">
+          <div class="col-9 mb-2">
             <p>{{user.telefono}}</p>
           </div>
-          <div class="col-3">
+          <div class="col-3 mb-2">
             <b>
               <p>Dirección:</p>
             </b>
           </div>
-          <div class="col-9">
+          <div class="col-9 mb-2">
             <p>{{user.direccion}}</p>
           </div>
         </div>

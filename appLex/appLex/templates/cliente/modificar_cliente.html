@@ -26,70 +26,121 @@
                     <h5 class="companyTitle">LEX</h5>
                 </div>
             </div>
+
+            {% if usuario %}
             <div class="col-9">
-                <div class="cuadroInformacion row">
-                    <form action="/modificacion_cliente/" method="get">
-                        <div class="col-3">
+                {% for user in usuario %}
+                <form method="POST" name="formularioModificar">
+                    {% csrf_token %}
+                    <div class="cuadroInformacion row">
+                        <div class="col-3 mb-2">
                             <b>
                                 <p>Nombre: </p>
                             </b>
                         </div>
-                        <div class="col-9">
-                            <p>Natalia Castro</p>
+                        <div class="col-9 mb-2">
+                            <input type="text" class="form-control br-0" readonly autocomplete="off" id="inpNombre"
+                                name="inpNombre" value="{{user.nombre}}" placeholder="nombre">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 mb-2">
                             <b>
-                                <p>Rut: </p>
+                                <p>Apellido paterno: </p>
                             </b>
                         </div>
-                        <div class="col-9">
-                            <p>18.547.292-2</p>
+                        <div class="col-9 mb-2">
+                            <input type="text" class="form-control br-0" readonly autocomplete="off" id="inpApellidopa"
+                                name="inpApellidopa" value="{{user.appaterno}}" placeholder="apellido paterno">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 mb-2">
+                            <b>
+                                <p>Apellido materno: </p>
+                            </b>
+                        </div>
+                        <div class="col-9 mb-2">
+                            <input type="text" class="form-control br-0" readonly autocomplete="off" id="inpApellidoma"
+                                name="inpApellidoma" value="{{user.apmaterno}}" placeholder="apellido materno">
+                        </div>
+                        <div class="col-3 mb-2">
+                            <b>
+                                <p>Rut:</p>
+                            </b>
+                        </div>
+                        <div class="col-9 mb-2">
+                            <input type="text" class="form-control br-0" readonly autocomplete="off" id="inpRut"
+                                name="inpRut" value="{{user.rut}}" placeholder="rut">
+                        </div>
+                        <div class="col-3 mb-2">
                             <b>
                                 <p>Email:</p>
                             </b>
                         </div>
-                        <div class="col-9">
-                            <p><input type="email" class="form-control" placeholder="nombre@ejemplo.com"> </p>
+                        <div class="col-9 mb-2">
+                            <input type="email" class="form-control br-0" autocomplete="off" id="inpEmail"
+                                name="inpEmail" value="{{user.email}}" placeholder="email">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 mb-2">
                             <b>
                                 <p>Teléfono:</p>
                             </b>
                         </div>
-                        <div class="col-9">
-                            <p>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="txt_tel_mod">+56</span>
-                                <input type="number" class="form-control" placeholder="941541284" aria-label="Username"
-                                    id="txt_telefono_mod" aria-describedby="basic-addon1">
-                            </div>
-                            </p>
+                        <div class="col-9 mb-2">
+                            <input type="text" class="form-control br-0" autocomplete="off" id="inpTelefono"
+                                name="inpTelefono" value="{{user.telefono}}" placeholder="teléfono">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 mb-2">
                             <b>
                                 <p>Dirección:</p>
                             </b>
                         </div>
-                        <div class="col-9">
-                            <p>
-                                <input type="text" class="form-control" name="txt_direc_mod" id="txt_direc_mod">
-                            </p>
+                        <div class="col-9 mb-2">
+                            <input type="text" class="form-control br-0" autocomplete="off" id="inpDireccion"
+                                name="inpDireccion" value="{{user.direccion}}" placeholder="dirección">
                         </div>
-                </div>
-                <div class="row justify-content-end">
-                    <div class="col-5 me-5">
-                        <button class="btn btn-blue w-100">Editar información</button>
                     </div>
+                    <div class="row justify-content-between">
+                        <div class="col-4 ms-5">
+                            <a class="btn btn-secondary w-100" href="/inicio/">Volver</a>
+                        </div>
+                        <div class="col-5 me-5">
+                            <button class="btn btn-blue w-100" type="button" onclick="javascript:void(modificar_informacion())">Editar
+                                información</button>
+                        </div>
+                    </div>
+                </form>
+                {% endfor %}
+                <div style="height: 1rem;">
+                    {% if mensaje %}
+                    <h6 class="mb-0">{{ mensaje }}</h6>
+                    {% endif %}
                 </div>
             </div>
-
-            </form>
-
+            {% endif %}
         </div>
-
     </div>
+
+    <div class="modal fade" id="modalModificacion" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h4 id="modalModificacionoAdvertencia"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-blue" data-bs-dismiss="modal">Entiendo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var modalModificacion = new bootstrap.Modal(document.getElementById('modalModificacion'), {
+            keyboard: false
+        });
+        var modalModificacionoAdvertencia = document.getElementById('modalModificacionoAdvertencia');
+    </script>
 
 </body>
 

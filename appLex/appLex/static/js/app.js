@@ -254,3 +254,48 @@ function generarSolicitudTec() {
     modalSolicitudTec.show();
     limpiarFormSolicitud();
 }
+
+function modificar_informacion() {
+    var nombre = document.formularioModificar.inpNombre.value;
+    var apellidopa = document.formularioModificar.inpApellidopa.value;
+    var apellidoma = document.formularioModificar.inpApellidoma.value;
+    var rut = document.formularioModificar.inpRut.value;
+    var email = document.formularioModificar.inpEmail.value;
+    var telefono = document.formularioModificar.inpTelefono.value;
+    var direccion = document.formularioModificar.inpDireccion.value;
+
+    if (nombre.length === 0 || apellidopa.length === 0 || apellidoma.length === 0) {
+        modalModificacionoAdvertencia.textContent = "Debe ingresar su nombre completo.";
+        modalModificacion.show();
+        return false;
+    }
+
+    else if (rut.length === 0 || rut.length > 11 || rut.length < 8 || rut.indexOf('-') === -1) {
+        modalModificacionoAdvertencia.textContent = "Debe ingresar un rut válido con guión.";
+        modalModificacion.show();
+        return false;
+    }
+
+    else if (email.length === 0 || email.indexOf('@') === -1 || email.indexOf('.') === -1 || email.length < 3) {
+        modalModificacionoAdvertencia.textContent = "Debe ingresar un email válido.";
+        modalModificacion.show();
+        return false;
+    }
+
+    else if (telefono.length === 0 || telefono.length > 13) {
+        modalModificacionoAdvertencia.textContent = "Debe ingresar un teléfono válido.";
+        modalModificacion.show();
+        return false;
+    }
+
+    else if (direccion.length === 0) {
+        modalModificacionoAdvertencia.textContent = "Debe ingresar una dirección válida.";
+        modalModificacion.show();
+        return false;
+    }
+
+    else {
+        document.formularioModificar.action = "/modificacion_cliente/";
+        document.formularioModificar.submit() = true;
+    }
+}
