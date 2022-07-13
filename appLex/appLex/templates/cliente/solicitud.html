@@ -69,26 +69,21 @@
       <div class="col-9" id="ingresoSolicitud" style="display: none;">
         <div class="cuadroInformacion row">
           <p>Ingrese los datos requeridos para generar una nueva solicitud:</p>
+          {% if usuario %}
+          {% for user in usuario %}
           <form class="row" name="formularioSolicitud">
             <div class="col-6 mb-3">
-              <input type="text" class="form-control" readonly name="fs_nombre" placeholder="nombre" value="Natalia">
+              <input type="text" class="form-control" readonly name="fs_nombre" placeholder="nombre" value="{{user.nombre}} {{user.appaterno}} {{user.apmaterno}}">
             </div>
             <div class="col-6 mb-3">
-              <input type="text" class="form-control" readonly name="fs_apellido" placeholder="apellidos"
-                value="Castro">
-            </div>
-            <div class="col-6 mb-3">
-              <input type="text" class="form-control" readonly name="fs_rut" placeholder="rut" value="18.547.292-2">
+              <input type="text" class="form-control" readonly name="fs_rut" placeholder="rut" value="{{user.rut}}">
             </div>
             <div class="col-6 mb-3">
               <input type="text" class="form-control" readonly name="fs_email" placeholder="email"
-                value="naticcg@gmail.com">
+                value="{{user.email}}">
             </div>
             <div class="col-6 mb-3">
-              <input type="text" class="form-control" name="fs_direccion" placeholder="dirección">
-            </div>
-            <div class="col-6 mb-3">
-              <input type="text" class="form-control" name="fs_comuna" placeholder="comuna">
+              <input type="text" class="form-control" name="fs_direccion" placeholder="dirección" value="{{user.direccion}}">
             </div>
             <div class="col-6 mb-3">
               <input type="text" class="form-control" name="fs_num" placeholder="número de causa">
@@ -102,6 +97,8 @@
               </select>
             </div>
           </form>
+          {% endfor %}
+          {% endif %}
         </div>
         <div class="row justify-content-between">
           <div class="col-4 ms-5">

@@ -52,7 +52,8 @@ def home_cliente(request):
     return render(request, "cliente/vista_cliente.html", {'usuario': cliente})
 
 def c_solicitudes(request):
-    return render(request,"cliente/solicitud.html")
+    cliente = request.session['cliente']
+    return render(request,"cliente/solicitud.html", {'usuario': cliente})
 
 def c_contratos(request):
     return render(request,"cliente/contratos.html")
