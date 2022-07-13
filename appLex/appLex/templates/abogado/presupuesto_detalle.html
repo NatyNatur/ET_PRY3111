@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abogado</title>
+  {% include "common.html" %}
+  {% load static %}
+</head>
+
+<body>
+  <nav class="vistaAbogado container-fluid fondoAzul">
+    <div class="row h-100">
+        <div class="col-3 align-self-center me-auto">
+          <h5 class="companyTitle text-white">LEX</h5>
+        </div>
+        <div class="col-2 align-self-center d-flex justify-content-end">
+          <div class="circleUser d-inline-block fw-bolder me-5">
+            <span class="text-white">A</span>
+          </div>
+          <div class="text-center d-inline-block userLogout pe-3">
+            <a href="/"><i class="bi bi-box-arrow-right"></i></a>
+          </div>
+        </div>
+    </div>
+</nav>
+
+
+  <div class="container-fluid h-100Abo">
+    <div class="row h-100">
+        <div class="col-3 fondoGris h-100">
+            
+            <nav class="nav userNav flex-column ms-3 mt-50">
+              <a class="nav-link " href="/inicio_abogado/">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="/presupuestos/">Presupuestos</a>
+              <a class="nav-link " href="/causas/">Causas</a>
+              </nav>
+        </div>
+        <div class="col-9">
+            <div class="cuadroInformacionCompany row">
+              <div class="col-3">
+                <b>
+                  <p>N° Presupuesto: </p>
+                </b>
+              </div>
+              <div class="col-9">
+                <p>XN123</p>
+              </div>
+              <div class="col-3">
+                <b>
+                  <p>Monto: </p>
+                </b>
+              </div>
+              <div class="col-9">
+                <p>$1.250.000</p>
+              </div>
+              <div class="col-3">
+                <b>
+                  <p>Fecha:</p>
+                </b>
+              </div>
+              <div class="col-9">
+                <p>03/05/2022</p>
+              </div>
+              <div class="col-3">
+                <b>
+                  <p>N° Cliente:</p>
+                </b>
+              </div>
+              <div class="col-9">
+                <p>256</p>
+              </div>
+              <div class="col-3">
+                <b>
+                  <p>Estado:</p>
+                </b>
+              </div>
+              <div class="col-9">
+                <p>Enviado</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 ms-5">
+                <button class="btn btn-secondary w-100" onclick="javascript:void(backPresupuestos())">Volver</button>
+              </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>

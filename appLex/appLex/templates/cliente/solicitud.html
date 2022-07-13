@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home</title>
   {% include "common.html" %}
+  {% load static %}
 </head>
 
 <body>
@@ -17,10 +18,10 @@
           <i class="bi bi-person-circle"></i>
         </div>
         <nav class="nav userNav flex-column ms-3 mb-auto">
-          <a class="nav-link text-white" aria-current="page" href="vista_cliente.html">Mi perfil</a>
-          <a class="nav-link text-white active" href="solicitud_cliente.html">Mis solicitudes</a>
-          <a class="nav-link text-white" href="contrato_cliente.html">Mis contratos</a>
-          <a class="nav-link text-white" href="index.html">Cerrar sesión</a>
+          <a class="nav-link text-white" aria-current="page" href="/inicio">Mi perfil</a>
+          <a class="nav-link text-white active" href="/mis_solicitudes/">Mis solicitudes</a>
+          <a class="nav-link text-white" href="/mis_contratos/">Mis contratos</a>
+          <a class="nav-link text-white" href="/">Cerrar sesión</a>
         </nav>
         <div class="text-center text-white mb-3">
           <h5 class="companyTitle">LEX</h5>
@@ -156,7 +157,6 @@
     });
     var modalSolicitudErroneaAdvertencia = document.getElementById('modalSolicitudErroneaAdvertencia');
   </script>
-  <script src="./assets/js/app.js"></script>
 </body>
 
 </html>

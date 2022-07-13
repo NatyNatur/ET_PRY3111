@@ -26,6 +26,7 @@
             <h3>Registro</h3>
             <span class="d-block mb-2">Ingrese los siguientes datos para registrarse</span>
             <form class="mb-2" name="formularioRegistro" method="POST">
+              {% csrf_token %}
               <div class="col-12 mb-1">
                 <input type="text" class="form-control br-0" autocomplete="off" id="inpNombre" name="inpNombre" value=""
                   placeholder="nombre">
@@ -62,12 +63,16 @@
                 <span>¿Ya tiene cuenta? <a href="/">Inicie sesión</a> </span>
               </div>
             </form>
+            <div style="height: 1rem;">
+              {% if mensaje %}
+              <h6 class="mb-0">{{ mensaje }}</h6>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Modal -->
   <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

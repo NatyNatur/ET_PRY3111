@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Técnico Jurídico</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav class="vistaAbogado container-fluid fondoAzul">
+    <div class="row h-100">
+      <div class="col-3 align-self-center me-auto">
+        <h5 class="companyTitle text-white">LEX</h5>
+      </div>
+      <div class="col-2 align-self-center d-flex justify-content-end">
+        <div class="circleUser d-inline-block fw-bolder me-5">
+          <span class="text-white">TJ</span>
+        </div>
+        <div class="text-center d-inline-block userLogout pe-3">
+          <a href="index.html"><i class="bi bi-box-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+  </nav>
+
+
+  <div class="container-fluid h-100Abo">
+    <div class="row h-100">
+      <div class="col-3 fondoGris h-100">
+
+        <nav class="nav userNav flex-column ms-3 mt-50">
+          <a class="nav-link " aria-current="page" href="vista_tecnico.html">Inicio</a>
+          <a class="nav-link active" href="solicitudes_tecnico.html">Solicitudes</a>
+          <a class="nav-link " href="registro_pago_tecnico.html">Registrar Pago</a>
+        </nav>
+      </div>
+      <div class="col-9" id="listaSolicitudesTec">
+        <div class="cuadroInformacionCompany row">
+          <table class="table" id="tablaSolicitudesTec">
+            <thead>
+              <tr>
+                <th scope="col">Cliente</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Ver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">102</td>
+                <td>C-0001</td>
+                <td>Familia</td>
+                <td>03/05/2022</td>
+                <td>Rechazada</td>
+                <td><a href=''><i class='bi bi-eye-fill'></i></a></td>
+              </tr>
+              <tr>
+                <td scope="row">102</td>
+                <td>C-0002</td>
+                <td>Familia</td>
+                <td>10/05/2022</td>
+                <td>Pendiente de revisión</td>
+                <td><a href=''><i class='bi bi-eye-fill'></i></a></td>
+              </tr>
+              <tr>
+                <td scope="row">116</td>
+                <td>V-0002</td>
+                <td>Civil</td>
+                <td>07/05/2022</td>
+                <td>Pendiente de revisión</td>
+                <td><a href=''><i class='bi bi-eye-fill'></i></a></td>
+              </tr>
+              <tr>
+                <td scope="row">389</td>
+                <td>S-0011</td>
+                <td>Salud</td>
+                <td>11/05/2022</td>
+                <td>Presupuesto enviado</td>
+                <td><a href=''><i class='bi bi-eye-fill'></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-5 me-5">
+            <button class="btn btn-blue w-100" onclick="javascript:void(toggleSolicitudTec())">Generar
+              Solicitud</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-9" id="ingresoSolicitudTec" style="display: none;">
+        <div class="cuadroInformacionCompany row">
+          <h5 class="mb-5">Ingrese los datos requeridos para generar una nueva solicitud:</h5>
+          <form class="row" name="formularioSolicitudTec">
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control" name="fs_nombre" placeholder="nombre" value="">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control" name="fs_apellido" placeholder="apellidos" value="">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control" name="fs_rut" placeholder="rut" value="">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control" name="fs_email" placeholder="email" value="">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control" name="fs_direccion" placeholder="dirección">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control" name="fs_comuna" placeholder="comuna">
+            </div>
+            <div class="col-6 mb-3">
+              <input type="text" class="form-control" name="fs_num" placeholder="número de causa">
+            </div>
+            <div class="col-6 mb-3">
+              <select class="form-select" name="fs_tipo">
+                <option selected value="null">seleccione un tipo de causa</option>
+                <option value="Familia">Familia</option>
+                <option value="Civil">Civil</option>
+                <option value="Salud">Salud</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-4 ms-5">
+            <button class="btn btn-secondary w-100" onclick="javascript:void(toggleSolicitudTec())">Volver</button>
+          </div>
+          <div class="col-4 me-5">
+            <button class="btn btn-blue w-100" onclick="javascript:void(generarSolicitudTec())">Crear Solicitud</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modalSolicitudTec" tabindex="-1" aria-labelledby="modalSolicitudExitosaMensaje"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h4 id="modalSolicitudExitosaMensaje">Solicitud creada exitosamente.</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-blue mx-auto" data-bs-dismiss="modal"
+            onclick="javascript:void(toggleSolicitudTec())">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalSolicitudErroneaTec" tabindex="-1" aria-labelledby="modalSolicitudErroneaAdvertenciaTec"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <h4 id="modalSolicitudErroneaAdvertenciaTec"></h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-blue mx-auto" data-bs-dismiss="modal">Entiendo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    var modalSolicitudTec = new bootstrap.Modal(document.getElementById('modalSolicitudTec'), {
+      keyboard: false
+    });
+    var modalSolicitudErroneaTec = new bootstrap.Modal(document.getElementById('modalSolicitudErroneaTec'), {
+      keyboard: false
+    });
+    var modalSolicitudErroneaAdvertenciaTec = document.getElementById('modalSolicitudErroneaAdvertenciaTec');
+  </script>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>

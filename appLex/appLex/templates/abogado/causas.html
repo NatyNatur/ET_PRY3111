@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abogado</title>
+  {% include "common.html" %}
+  {% load static %}
+</head>
+
+<body>
+
+  <nav class="vistaAbogado container-fluid fondoAzul">
+    <div class="row h-100">
+      <div class="col-3 align-self-center me-auto">
+        <h5 class="companyTitle text-white">LEX</h5>
+      </div>
+      <div class="col-2 align-self-center d-flex justify-content-end">
+        <div class="circleUser d-inline-block fw-bolder me-5">
+          <span class="text-white">A</span>
+        </div>
+        <div class="text-center d-inline-block userLogout pe-3">
+          <a href="/"><i class="bi bi-box-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  </nav>
+
+
+  <div class="container-fluid h-100Abo">
+    <div class="row h-100">
+      <div class="col-3 fondoGris h-100">
+        <nav class="nav userNav flex-column ms-3 mt-50">
+          <a class="nav-link" href="/inicio_abogado/">Inicio</a>
+          <a class="nav-link" href="/presupuestos/">Presupuestos</a>
+          <a class="nav-link active" aria-current="page"  href="/causas/">Causas</a>
+        </nav>
+      </div>
+      <div class="col-9">
+        <div class="cuadroInformacionCompany row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">N° Presupuesto</th>
+                <th scope="col">N° Cliente</th>
+                <th scope="col">Nombre Cliente</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Archivos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">XN123</th>
+                <td>256</td>
+                <td>Juanito Perez</td>
+                <td>03/05/2022</td>
+                <td>Enviado</td>
+                <td>
+                  <a href="">Evidencia 1</a>
+                  <a href="">Evidencia 2</a>
+                  <a href="">Archivo 1</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">HN657</th>
+                <td>121</td>
+                <td>Ana Gonzalez</td>
+                <td>03/05/2022</td>
+                <td>Enviado</td>
+                <td>
+                  <a href="">Evidencia 1</a>
+                  <a href="">Archivo 2</a>
+                  <a href="">Archivo 1</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">JK554</th>
+                <td>443</td>
+                <td>Funalino Romero</td>
+                <td>03/05/2022</td>
+                <td>Enviado</td>
+                <td>
+                  <a href="">Evidencia 1</a>
+                  <a href="">Evidencia 2</a>
+                </td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -25,7 +25,8 @@
           <div class="col-10 text-center">
             <h3>Bienvenido a Lex</h3>
             <span class="d-block mb-2">Ingrese los siguientes datos para ingresar al portal</span>
-            <form class="mb-2" name="formularioIngreso">
+            <form class="mb-2" name="formularioIngreso" method="POST">
+              {% csrf_token %} 
               <div class="col-12 mb-1">
                 <input type="email" class="form-control br-0" id="inpEmail" autocomplete="off" name="inpEmail" value=""
                   placeholder="email">
@@ -42,6 +43,11 @@
                 <span>¿No tiene cuenta? <a href="/registro">Regístrese</a> </span>
               </div>
             </form>
+            <div style="height: 1rem;">
+            {% if mensaje %}
+            <h6 class="mb-0">{{ mensaje }}</h6>
+            {% endif %}
+            </div>
           </div>
         </div>
       </div>

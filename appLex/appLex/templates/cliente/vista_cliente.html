@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home</title>
   {% include "common.html" %}
+  {% load static %}
 </head>
 
 <body>
@@ -17,16 +18,18 @@
           <i class="bi bi-person-circle"></i>
         </div>
         <nav class="nav userNav flex-column ms-3 mb-auto">
-          <a class="nav-link text-white active" aria-current="page" href="vista_cliente.html">Mi perfil</a>
-          <a class="nav-link text-white" href="solicitud_cliente.html">Mis solicitudes</a>
-          <a class="nav-link text-white" href="contrato_cliente.html">Mis contratos</a>
-          <a class="nav-link text-white" href="index.html">Cerrar sesión</a>
+          <a class="nav-link text-white active" aria-current="page" href="/inicio">Mi perfil</a>
+          <a class="nav-link text-white" href="/mis_solicitudes/">Mis solicitudes</a>
+          <a class="nav-link text-white" href="mis_contratos/">Mis contratos</a>
+          <a class="nav-link text-white" href="/">Cerrar sesión</a>
         </nav>
         <div class="text-center text-white mb-3">
           <h5 class="companyTitle">LEX</h5>
         </div>
       </div>
+      {% if usuario %}
       <div class="col-9">
+        {% for user in usuario %}
         <div class="cuadroInformacion row">
           <div class="col-3">
             <b>
@@ -34,7 +37,7 @@
             </b>
           </div>
           <div class="col-9">
-            <p>Natalia Castro</p>
+            <p>{{user.nombre}} {{user.appaterno}} {{user.apmaterno}}</p>
           </div>
           <div class="col-3">
             <b>
@@ -42,7 +45,7 @@
             </b>
           </div>
           <div class="col-9">
-            <p>18.547.292-2</p>
+            <p>{{user.rut}}</p>
           </div>
           <div class="col-3">
             <b>
@@ -50,7 +53,7 @@
             </b>
           </div>
           <div class="col-9">
-            <p>naticcg@gmail.com</p>
+            <p>{{user.email}}</p>
           </div>
           <div class="col-3">
             <b>
@@ -58,7 +61,7 @@
             </b>
           </div>
           <div class="col-9">
-            <p></p>
+            <p>{{user.telefono}}</p>
           </div>
           <div class="col-3">
             <b>
@@ -66,15 +69,17 @@
             </b>
           </div>
           <div class="col-9">
-            <p></p>
+            <p>{{user.direccion}}</p>
           </div>
         </div>
         <div class="row justify-content-end">
           <div class="col-5 me-5">
-            <button class="btn btn-blue w-100">Editar información</button>
+            <a class="btn btn-blue w-100" href="/modificar_cliente/">Editar información</a>
           </div>
         </div>
+        {% endfor %}
       </div>
+      {% endif %}
     </div>
 
   </div>
